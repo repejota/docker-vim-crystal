@@ -59,7 +59,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'chriskempson/base16-vim'
 Plugin 'bling/vim-airline'
-Plugin 'rust-lang/rust.vim'
+Plugin 'rhysd/vim-crystal'
 Plugin 'cespare/vim-toml'
 Plugin 'scrooloose/nerdTree'
 Plugin 'majutsushi/tagbar'

@@ -19,9 +19,11 @@ RUN apt-get install -y --no-install-recommends build-essential \
     make
 
 # Installing Crystal
-ENV RUST_VERSION=1.5.0
 WORKDIR /tmp
-RUN curl http://dist.crystal-lang.org/apt/setup.sh | sudo bash
+RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 09617FD37CC06B54 && \
+    echo "deb http://dist.crystal-lang.org/apt crystal main" > /etc/apt/sources.list.d/crystal.list && \
+    apt-get update -y && \
+    apt-get install -y crystal
 
 # Setup the environment
 WORKDIR /root
@@ -35,6 +37,7 @@ RUN git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-
     cd  ~/.vim/bundle                                                                       && \
     # Get vim plugins
     git clone https://github.com/gmarik/Vundle.vim.git                                      && \
+    git clone https://github.com/rhysd/vim-crystal.git                                      && \
     git clone https://github.com/chriskempson/base16-vim.git                                && \
     git clone https://github.com/bling/vim-airline.git                                      && \
     git clone https://github.com/cespare/vim-toml.git                                       && \

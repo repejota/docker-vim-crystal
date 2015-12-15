@@ -1,6 +1,6 @@
 run: build
-	docker run -p 80:8080 -ti --rm -v `pwd`:/source rust
+	docker run -p 80:8080 -ti --rm -v `pwd`:/source crystal
 
 build:
-	docker build --rm -t rust .
+	docker build --rm -t crystal .
 
